@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 26</title>
+    <style>
+        body{
+            background-color: #FBDA61;
+            background-image: linear-gradient(45deg, #f974b2 0%, #81f5dc 100%);
+            min-height: 100vh;
+        }
+        .app-title{
+            text-align: center;
+            padding-top: 60px;
+        }
+        .emoji-container{
+            background-color: rgb(221, 218, 218);
+            width: 470px;
+            display: flex;
+            justify-content: center;
+            margin: 10px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+        }
+        .emoji1{
+            height: 250px;
+        }
+        .btn-container{
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+        .btn-toggle{
+            font-size: 20px;
+            padding: 10px 30px;
+            border-radius: 40px;
+            border: none;
+            margin: 0 30px;
+            cursor: pointer;
+            
+        }
+        .btn-Full{
+            background-color: #FBDA61;
+        }
+
+        .btn-toggle:hover{
+            box-shadow: 0 0 10px black;
+
+        }
+        @media screen and (max-width(600px)) {
+            .emoji-container{
+                width: 80%;
+            }
+            .emoji1{
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="app-title">Moon Toggler</h1>
+    <div class="emoji-container">
+        <img src="./img/empty_moon.jpg" class="emoji1" id="emptymoon" />
+    </div>
+    <div class="btn-container">
+       
+        <button class="btn-toggle btn-Empty" onclick="toggleMoon('Empty')">Empty Moon</button>
+        <button class="btn-toggle btn-Full" onclick="toggleMoon('Full')">Full Moon</button>
+        
+    </div>
+
+    <script>
+        function toggleMoon(state){
+            const MoonElement = document.getElementById("emptymoon");
+            if(state =='Empty'){
+                MoonElement.src = './img/empty_moon.jpg';
+            }
+
+            else if (state == 'Full')
+            {
+                
+                MoonElement.src = './img/full_moon.jpg';
+            }
+            
+        }
+    
+    </script>
+</body>
+</html>
